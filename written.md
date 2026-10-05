@@ -203,7 +203,7 @@ logs = [
 3. 解释为什么第 2 问不能直接用 `len(logs)` 得到结果，需要什么遍历结构？
 
 1.list=[x for x in logs if x["level"]=="ERROR"]
-2.
+2.dic={x["user"]:sum(1 for y in logs if y["user"]==x["user"])for x in logs}
 
 ### 第 3 题：异常处理设计
 
