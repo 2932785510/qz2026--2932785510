@@ -204,6 +204,7 @@ logs = [
 
 1.list=[x for x in logs if x["level"]=="ERROR"]
 2.dic={x["user"]:sum(1 for y in logs if y["user"]==x["user"])for x in logs}
+3.len(logs)得到的是logs一共有多少元素，不能得出每个用户出现了多少次。遍历结构为：第一次遍历整个logs，在每一个元素里再遍历一次，元素用户名相同就加一。
 
 ### 第 3 题：异常处理设计
 
