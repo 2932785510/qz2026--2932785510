@@ -1,13 +1,12 @@
 import json
 import copy
-class UserManage:
+class UserManager:
     def __init__(self):
         self._users=[]
     def add_user(self,name,age):
-        self._userid=max(i.get("id") for i in self._users,0)+1
-        user={"name":name,"age":age,"id":self._userid}
+        user_id=max((i.get("id") for i in self._users),default=0)+1
+        user={"name":name,"age":age,"id":user_id}
         self._users.append(user)
-        self._userid+=1
         return copy.deepcopy(user)
     def get_user(self,user_id):
         for i in self._users:
@@ -26,7 +25,7 @@ class UserManage:
                 self._users.remove(i)
                 return True
         return False
-    def list_user(self):
+    def list_users(self):
         return copy.deepcopy(self._users)
     def save_to_json(self,filepath):
         with open(filepath,"w",encoding="utf-8") as f:
