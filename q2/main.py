@@ -30,5 +30,8 @@ class UserManage:
         return copy.deepcopy(self._users)
     def save_to_json(self,filepath):
         with open(filepath,"w",encoding="utf-8") as f:
-            json.dumps(self._users,f,ensure_ascii=False)
-            
+            json.dump(self._users,f,ensure_ascii=False)
+    def load_from_json(self,filepath):
+        with open(filepath,"r",encoding="utf-8") as f:
+            self._users=json.load(f)
+        return copy.deepcopy(self._users)
