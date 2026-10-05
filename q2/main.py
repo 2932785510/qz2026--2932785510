@@ -3,8 +3,8 @@ import copy
 class UserManage:
     def __init__(self):
         self._users=[]
-        self._userid=1
     def add_user(self,name,age):
+        self._userid=max(i.get("id") for i in self._users,0)+1
         user={"name":name,"age":age,"id":self._userid}
         self._users.append(user)
         self._userid+=1
