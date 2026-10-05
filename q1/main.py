@@ -21,4 +21,3 @@ def analyze_log(filepath: str) -> dict:
         "last_error":error[-1].get("message") if error else None
     }
     return result
-print(analyze_log("error.jsonl"))
