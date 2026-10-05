@@ -26,3 +26,5 @@ class UserManage:
                 self._users.remove(i)
                 return True
         return False
+    def list_user(self):
+        return copy.deepcopy(self._users)
