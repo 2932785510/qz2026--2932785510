@@ -28,3 +28,7 @@ class UserManage:
         return False
     def list_user(self):
         return copy.deepcopy(self._users)
+    def save_to_json(self,filepath):
+        with open(filepath,"w",encoding="utf-8") as f:
+            json.dumps(self._users,f,ensure_ascii=False)
+            
