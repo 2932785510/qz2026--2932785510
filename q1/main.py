@@ -10,8 +10,8 @@ def analyze_log(filepath: str) -> dict:
     error=[x for x in jsonl if x["level"]=="ERROR"]
     result={
         "total":len(jsonl),
-        "by_level":by_level,
-        "by_user":by_user,
-        "last_error":error[-1]["message"]
+        "by_level":dict(by_level),
+        "by_user":dict(by_user),
+        "last_error":error[-1].get("message") if error else None
     }
     return result
