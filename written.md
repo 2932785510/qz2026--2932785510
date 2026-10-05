@@ -221,4 +221,11 @@ Day_10 中你写过 `safe_int(s)` 函数：能转就返回整数，不能转就�
 
 请写出函数代码，并说明：为什么这里用 `try/except` 比先用 `if` 判断再计算更好？
 
-（在此作答）
+def safe_divide(a,b):
+    try:
+        a=float(a)
+        b=float(b)
+        return a/b
+    except (ValueError,ZeroDivisionError):
+        return None
+理由：try/except语句是报错后再执行except，而if判断无论是否报错都会执行，同时，使用if判断的话需要分别判断各种条件，写起来繁琐，因此try/except语句更加高效。
